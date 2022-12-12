@@ -30,7 +30,7 @@ namespace ListaIndirizzi
 
         public override string ToString()
         {
-            return "Nome: " 
+            return "\n\nNome: " 
                 + this.name 
                 + "\nCognome: " 
                 + this.surname 

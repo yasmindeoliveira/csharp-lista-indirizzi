@@ -3,6 +3,7 @@
 using ListaIndirizzi;
 
 StreamReader file = File.OpenText("C:\\Users\\generation\\Desktop\\Esercizi GIT\\C#_DotNET\\ListaIndirizzi\\ListaIndirizzi\\File\\addresses.csv");
+List<Indirizzo> Indirizzi= new List<Indirizzo>();
 
 int rigaLetta = 0;
 while (!file.EndOfStream)
@@ -26,15 +27,25 @@ while (!file.EndOfStream)
 
     if(dati.Length == 6)
     {
-        Indirizzo Indirizzo = new Indirizzo(dati[0], dati[1], dati[2], dati[3], dati[4], dati[5]);
-        Console.WriteLine(Indirizzo);
-    }else if(dati.Length == 7)
-    {
-        Indirizzo Indirizzo = new Indirizzo(dati[0] + " " + dati[1], dati[2], dati[3], dati[4], dati[5], dati[6]);
-        Console.WriteLine(Indirizzo);
+        Indirizzo indirizzo = new Indirizzo(dati[0], dati[1], dati[2], dati[3], dati[4], dati[5]);
+        
+        Indirizzi.Add(indirizzo);
     }
+    else if(dati.Length == 7)
+    {
+        Indirizzo indirizzo = new Indirizzo(dati[0] + " " + dati[1], dati[2], dati[3], dati[4], dati[5], dati[6]);
+        
+        Indirizzi.Add(indirizzo);
+    }
+
+    
     
     //Console.WriteLine(line);
 
 }
 file.Close();
+
+foreach(Indirizzo indirizzo in Indirizzi)
+{
+    Console.WriteLine(indirizzo);
+}
