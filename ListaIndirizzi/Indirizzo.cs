@@ -26,5 +26,23 @@ namespace ListaIndirizzi
             this.zip = zip;
         }
 
+
+
+        public override string ToString()
+        {
+            return "Nome: " 
+                + this.name 
+                + "\nCognome: " 
+                + this.surname 
+                + "\nVia: " 
+                + this.street 
+                + "\nCittà: " 
+                + this.city 
+                + "\nProvincia: " 
+                + this.province 
+                + "\nZIP: " 
+                + this.zip;
+        }
+
     }
 }
